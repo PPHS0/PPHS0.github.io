@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Tools - Pleasant Plains High School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Pleasant Plains High School</div>
+        <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="school-tools.html">School Tools</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://instagram.com/youraccount" target="_blank">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>School Tools</h1>
+        <p>Bookmarklets for easy access to resources.</p>
+    </header>
+
+    <section class="section">
+        <h2>JavaScript Bookmarklets</h2>
+        <div class="bookmarklet" onclick="copyToClipboard('javascript:alert(\'Hello, World!\')')">
+            <h3>Alert Hello World</h3>
+            <p>Click to copy this bookmarklet.</p>
+        </div>
+        <div class="bookmarklet" onclick="copyToClipboard('javascript:document.body.style.backgroundColor=\'#f4f4f4\'')">
+            <h3>Change Background Color</h3>
+            <p>Click to copy this bookmarklet.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Pleasant Plains High School. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Bookmarklet copied to clipboard!");
+            });
+        }
+    </script>
+</body>
+</html>
