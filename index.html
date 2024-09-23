@@ -11,12 +11,16 @@
 <body>
     <header>
         <nav>
-            <div class="logo">PPHS Hub</div>
+            <div class="logo">
+                <img src="school-logo.png" alt="PPHS Logo" class="school-logo">
+                PPHS Hub
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#highlights">Highlights</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#bookmarklets">Bookmarklets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -41,7 +45,6 @@
                 <img src="bs.jpg_large" alt="PPHS Image 4">
                 <img src="website bs.jpg" alt="PPHS Image 5">
                 <img src="11.jpg" alt="PPHS Image 6">
-
             </div>
         </section>
 
@@ -50,15 +53,18 @@
             <div class="highlight-grid">
                 <div class="highlight-card">
                     <video src="GraycynHadley.mp4" controls></video>
-                    <h3>Best Vollyball Clip</h3>
+                    <h3>Best Volleyball Clip</h3>
+                    <p>Watch our star player's incredible save!</p>
                 </div>
                 <div class="highlight-card">
                     <video src="highlight1.mp4" controls></video>
                     <h3>Football Touchdown of the Year</h3>
+                    <p>An amazing 80-yard run to clinch the game!</p>
                 </div>
                 <div class="highlight-card">
                     <video src="highlight3.mp4" controls></video>
                     <h3>Soccer Team's Winning Streak</h3>
+                    <p>Our team's journey to the state championship.</p>
                 </div>
             </div>
         </section>
@@ -87,27 +93,73 @@
                         <p>Let's welcome summer with games, food, and fun!</p>
                     </div>
                 </div>
+                <div class="event-item">
+                    <div class="event-date">JUL 5</div>
+                    <div class="event-details">
+                        <h3>Science Fair</h3>
+                        <p>Showcase your innovative projects and experiments!</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">AUG 15</div>
+                    <div class="event-details">
+                        <h3>Back to School Bash</h3>
+                        <p>Get ready for the new school year with friends and activities!</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">SEP 1</div>
+                    <div class="event-details">
+                        <h3>Club Fair</h3>
+                        <p>Explore and join various school clubs and organizations!</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="gallery">
             <h2>PPHS Gallery</h2>
-            <div class="gallery-grid">
-                <img src="https://source.unsplash.com/400x400/?highschool,students" alt="PPHS Gallery 1">
-                <img src="https://source.unsplash.com/400x400/?classroom,learning" alt="PPHS Gallery 2">
-                <img src="https://source.unsplash.com/400x400/?sports,team" alt="PPHS Gallery 3">
-                <img src="https://source.unsplash.com/400x400/?school,event" alt="PPHS Gallery 4">
-                <img src="https://source.unsplash.com/400x400/?graduation,celebration" alt="PPHS Gallery 5">
-                <img src="https://source.unsplash.com/400x400/?student,club" alt="PPHS Gallery 6">
+            <div class="gallery-container">
+                <div class="gallery-slider">
+                    <img src="https://source.unsplash.com/800x600/?highschool,students" alt="PPHS Gallery 1">
+                    <img src="https://source.unsplash.com/800x600/?classroom,learning" alt="PPHS Gallery 2">
+                    <img src="https://source.unsplash.com/800x600/?sports,team" alt="PPHS Gallery 3">
+                    <img src="https://source.unsplash.com/800x600/?school,event" alt="PPHS Gallery 4">
+                    <img src="https://source.unsplash.com/800x600/?graduation,celebration" alt="PPHS Gallery 5">
+                    <img src="https://source.unsplash.com/800x600/?student,club" alt="PPHS Gallery 6">
+                </div>
+                <button class="gallery-prev">&#10094;</button>
+                <button class="gallery-next">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="bookmarklets">
+            <h2>Useful Bookmarklets</h2>
+            <div class="bookmarklet-container">
+                <div class="bookmarklet">
+                    <h3>Dark Mode Toggle</h3>
+                    <p>Toggle dark mode on any website</p>
+                    <a href="javascript:(function(){document.body.style.backgroundColor=document.body.style.backgroundColor==='black'?'white':'black';document.body.style.color=document.body.style.color==='white'?'black':'white';})();" class="bookmarklet-link">Dark Mode Toggle</a>
+                </div>
+                <div class="bookmarklet">
+                    <h3>Text to Speech</h3>
+                    <p>Read selected text aloud</p>
+                    <a href="javascript:(function(){var t=window.getSelection().toString();if(t){var u=new SpeechSynthesisUtterance(t);speechSynthesis.speak(u);}else{alert('Please select some text first.');}})();" class="bookmarklet-link">Text to Speech</a>
+                </div>
+                <div class="bookmarklet">
+                    <h3>Page Editor</h3>
+                    <p>Make any page editable</p>
+                    <a href="javascript:document.body.contentEditable='true'; document.designMode='on'; void 0" class="bookmarklet-link">Page Editor</a>
+                </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Get in Touch</h2>
             <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
             <p class="disclaimer">For any questions, contact "best_of_pphs" on Instagram</p>
@@ -127,6 +179,7 @@
                     <li><a href="#highlights">Highlights</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#bookmarklets">Bookmarklets</a></li>
                 </ul>
             </div>
             <div class="footer-section">
