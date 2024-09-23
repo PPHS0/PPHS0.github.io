@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector('.navbar');
-    const background = document.querySelector('.particle-bg');
     const toggleDescription = document.querySelector('.toggle-description');
     const description = document.querySelector('.description');
 
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         particle.style.height = `${size}px`;
         particle.style.left = `${Math.random() * window.innerWidth}px`;
         particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        background.appendChild(particle);
+        document.body.appendChild(particle);
 
         particle.addEventListener('animationend', () => {
             particle.remove();
