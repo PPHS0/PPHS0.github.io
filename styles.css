@@ -527,3 +527,13 @@ footer {
 .parallax {
     transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.box {
+    background-color: var(--primary-color);
+    color: var(--text-color-box);
+}
