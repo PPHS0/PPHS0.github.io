@@ -65,15 +65,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    gsap.from('.gallery-grid img', {
-        opacity: 0,
-        scale: 0.8,
-        duration: 1,
-        stagger: 0.1,
-        scrollTrigger: {
-            trigger: '.gallery-grid',
-            start: 'top 80%',
-        }
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const galleryImages = document.querySelectorAll('.gallery-slider img');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        gallerySlider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
+        showSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % galleryImages.length;
+        showSlide(currentSlide);
     });
 
     const contactForm = document.querySelector('.contact-form');
@@ -134,5 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.fade-in').forEach(element => {
         observer.observe(element);
+    });
+
+    const bookmarklets = document.querySelectorAll('.bookmarklet-link');
+    bookmarklets.forEach(bookmarklet => {
+        bookmarklet.addEventListener('click', (e) => {
+            e.preventDefault();
+            const bookmarkletCode = bookmarklet.getAttribute('href');
+            navigator.clipboard.writeText(bookmarkletCode).then(() => {
+                alert('Bookmarklet copied to clipboard! Drag it to your bookmarks bar to use.');
+            }).catch(err => {
+                console.error('Failed to copy bookmarklet: ', err);
+            });
+        });
     });
 });
