@@ -1,40 +1,160 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector('.navbar');
-    const toggleDescription = document.querySelector('.toggle-description');
-    const description = document.querySelector('.description');
+document.addEventListener('DOMContentLoaded', () => {
+    // Image Gallery
+    const images = document.querySelectorAll('.image-gallery img');
+    let currentImage = 0;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        } else {
-            navbar.style.backgroundColor = 'transparent';
+    function changeImage() {
+        images[currentImage].classList.remove('active');
+        currentImage = (currentImage + 1) % images.length;
+        images[currentImage].classList.add('active');
+    }
+
+    images[currentImage].classList.add('active');
+    setInterval(changeImage, 5000);
+
+    // Navigation
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        burger.classList.toggle('toggle');
+    });
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from('.about-content', {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: '.about-content',
+            start: 'top 80%',
         }
     });
 
-    for (let i = 0; i < 100; i++) {
-        createParticle();
-    }
-
-    function createParticle() {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        const size = Math.random() * 10 + 5;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${Math.random() * window.innerWidth}px`;
-        particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        document.body.appendChild(particle);
-
-        particle.addEventListener('animationend', () => {
-            particle.remove();
-            createParticle();
-        });
-    }
-
-    toggleDescription.addEventListener('click', () => {
-        description.style.display = description.style.display === 'none' || description.style.display === '' ? 'block' : 'none';
+    gsap.from('.program-card', {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.program-grid',
+            start: 'top 80%',
+        }
     });
 
-    const viewCount = document.querySelector('.view-number');
-    viewCount.textContent = 123; 
+    gsap.from('.faculty-card', {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.faculty-slider',
+            start: 'top 80%',
+        }
+    });
+
+    // Contact Form
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+
+        console.log('Form submitted:', { name, email, message });
+        contactForm.reset();
+    });
+
+    // Smooth Scroll
+    const smoothScroll = (target) => {
+        const element = document.querySelector(target);
+        window.scrollTo({
+            top: element.offsetTop - 80,
+            behavior: 'smooth'
+        });
+    };
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            smoothScroll(anchor.getAttribute('href'));
+        });
+    });
+
+    // Sticky Header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Faculty Slider
+    const facultySlider = document.querySelector('.faculty-slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    facultySlider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - facultySlider.offsetLeft;
+        scrollLeft = facultySlider.scrollLeft;
+    });
+
+    facultySlider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    facultySlider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    facultySlider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - facultySlider.offsetLeft;
+        const walk = (x - startX) * 3;
+        facultySlider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+        const parallaxElements = document.querySelectorAll('.parallax');
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed;
+            element.style.transform = `translateY(${window.scrollY * speed}px)`;
+        });
+    });
 });
