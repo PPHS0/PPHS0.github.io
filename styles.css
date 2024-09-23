@@ -41,9 +41,17 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     color: var(--accent-color);
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.school-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .nav-links {
@@ -125,6 +133,7 @@ h2 {
     object-fit: cover;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    border-radius: 20px;
 }
 
 .image-gallery img.active {
@@ -172,11 +181,13 @@ h2 {
     background-color: var(--secondary-color);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .highlight-card video {
@@ -190,50 +201,136 @@ h2 {
     text-align: center;
 }
 
+.highlight-card p {
+    padding: 0 1rem 1rem;
+    color: var(--text-color-muted);
+}
+
 .event-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
 .event-item {
     display: flex;
+    flex-direction: column;
     background-color: var(--secondary-color);
     border-radius: 10px;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .event-date {
     background-color: var(--accent-color);
     color: var(--text-color);
     padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     font-weight: bold;
-    min-width: 100px;
 }
 
 .event-details {
     padding: 1rem;
+    flex-grow: 1;
 }
 
-.gallery-grid {
+.event-details h3 {
+    margin-bottom: 0.5rem;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+.bookmarklet-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.bookmarklet {
+    background-color: var(--secondary-color);
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
+.bookmarklet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bookmarklet h3 {
+    margin-bottom: 0.5rem;
+}
+
+.bookmarklet p {
+    color: var(--text-color-muted);
+    margin-bottom: 1rem;
+}
+
+.bookmarklet-link {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.bookmarklet-link:hover {
+    background-color: #ff679a;
 }
 
 .contact-form {
@@ -243,7 +340,8 @@ h2 {
     margin: 0 auto;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     margin-bottom: 1rem;
     padding: 0.75rem;
     border: none;
@@ -330,6 +428,7 @@ footer {
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .social-icon:hover {
     background-color: #ff679a;
     transform: scale(1.1);
@@ -386,8 +485,8 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .gallery-container {
+        max-width: 100%;
     }
 }
 
