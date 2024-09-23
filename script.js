@@ -31,34 +31,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from('.about-content', {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-            trigger: '.about-content',
-            start: 'top 80%',
-        }
+    gsap.utils.toArray('.fade-in').forEach(element => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 80%',
+            }
+        });
     });
 
-    gsap.from('.program-card', {
+    gsap.from('.highlight-card', {
         opacity: 0,
         y: 50,
         duration: 1,
         stagger: 0.2,
         scrollTrigger: {
-            trigger: '.program-grid',
+            trigger: '.highlight-grid',
             start: 'top 80%',
         }
     });
 
-    gsap.from('.faculty-card', {
+    gsap.from('.event-item', {
         opacity: 0,
         x: -50,
         duration: 1,
         stagger: 0.2,
         scrollTrigger: {
-            trigger: '.faculty-slider',
+            trigger: '.event-list',
+            start: 'top 80%',
+        }
+    });
+
+    gsap.from('.gallery-grid img', {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: '.gallery-grid',
             start: 'top 80%',
         }
     });
@@ -95,6 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.toggle('sticky', window.scrollY > 0);
     });
 
+    const parallaxElements = document.querySelectorAll('.parallax');
+    window.addEventListener('scroll', () => {
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const yPos = -(window.scrollY * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -104,48 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
+                entry.target.classList.add('appear');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
-
-    const facultySlider = document.querySelector('.faculty-slider');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    facultySlider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - facultySlider.offsetLeft;
-        scrollLeft = facultySlider.scrollLeft;
-    });
-
-    facultySlider.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-
-    facultySlider.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-
-    facultySlider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - facultySlider.offsetLeft;
-        const walk = (x - startX) * 3;
-        facultySlider.scrollLeft = scrollLeft - walk;
-    });
-
-    window.addEventListener('scroll', () => {
-        const parallaxElements = document.querySelectorAll('.parallax');
-        parallaxElements.forEach(element => {
-            const speed = element.dataset.speed;
-            element.style.transform = `translateY(${window.scrollY * speed}px)`;
-        });
+    document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
     });
 });
