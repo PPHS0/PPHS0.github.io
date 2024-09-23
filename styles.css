@@ -6,8 +6,8 @@
 
 html, body {
     height: 100%;
-    overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    overflow-y: scroll;
 }
 
 body {
@@ -21,7 +21,6 @@ body {
     width: 100%;
     height: 100%;
     background: url('your-image-path.jpg') no-repeat center center/cover;
-    overflow: hidden;
     z-index: -1;
     animation: scroll 30s linear infinite;
 }
@@ -41,13 +40,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    animation: colorChange 5s linear infinite alternate;
-}
-
-@keyframes colorChange {
-    0% { background: #800000; }
-    50% { background: #4169e1; }
-    100% { background: #800000; }
+    transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -130,13 +123,40 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.image-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.image-section h2 {
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.image-container img:hover {
+    opacity: 1;
+}
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
 
@@ -147,5 +167,14 @@ footer {
 
     .hero p {
         font-size: 18px;
+    }
+
+    .image-container {
+        flex-direction: column;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 300px;
     }
 }
