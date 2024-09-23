@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Image Gallery
     const images = document.querySelectorAll('.image-gallery img');
     let currentImage = 0;
 
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     images[currentImage].classList.add('active');
     setInterval(changeImage, 5000);
 
-    // Navigation
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.classList.toggle('toggle');
     });
 
-    // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.from('.about-content', {
@@ -66,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Contact Form
     const contactForm = document.querySelector('.contact-form');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -79,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.reset();
     });
 
-    // Smooth Scroll
     const smoothScroll = (target) => {
         const element = document.querySelector(target);
         window.scrollTo({
@@ -95,13 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sticky Header
     window.addEventListener('scroll', () => {
         const header = document.querySelector('header');
         header.classList.toggle('sticky', window.scrollY > 0);
     });
 
-    // Intersection Observer for animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -121,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Faculty Slider
     const facultySlider = document.querySelector('.faculty-slider');
     let isDown = false;
     let startX;
@@ -149,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
         facultySlider.scrollLeft = scrollLeft - walk;
     });
 
-    // Parallax effect
     window.addEventListener('scroll', () => {
         const parallaxElements = document.querySelectorAll('.parallax');
         parallaxElements.forEach(element => {
