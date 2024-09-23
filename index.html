@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern School Website</title>
+    <title>PPHS Student Hub</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -11,12 +11,12 @@
 <body>
     <header>
         <nav>
-            <div class="logo">School Logo</div>
+            <div class="logo">PPHS Hub</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -29,106 +29,113 @@
 
     <main>
         <section id="home">
-            <div class="image-gallery">
-                <img src="1.jpg" alt="School Image 1">
-                <img src="11.jpg" alt="School Image 2">
-                <img src="bs.jpg" alt="School Image 3">
-            </div>
             <div class="hero-content">
-                <h1>Welcome to Our School</h1>
-                <p>Empowering minds, shaping futures</p>
-                <a href="#about" class="cta-button">Learn More</a>
+                <h1>Welcome to PPHS Student Hub</h1>
+                <p>Your source for all things PPHS</p>
+                <a href="#highlights" class="cta-button">Check Out Highlights</a>
+            </div>
+            <div class="image-gallery">
+                <img src="https://source.unsplash.com/1600x900/?highschool,sports" alt="PPHS Image 1">
+                <img src="https://source.unsplash.com/1600x900/?students,event" alt="PPHS Image 2">
+                <img src="https://source.unsplash.com/1600x900/?classroom,technology" alt="PPHS Image 3">
             </div>
         </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Our school is dedicated to providing a nurturing environment where students can thrive academically and personally. We believe in fostering creativity, critical thinking, and a love for lifelong learning.</p>
+        <section id="highlights">
+            <h2>Sports Highlights</h2>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <video src="highlight1.mp4" controls></video>
+                    <h3>Basketball Championship Win</h3>
                 </div>
-                <div class="about-image">
-                    <img src="https://source.unsplash.com/800x600/?school,building" alt="School Building">
+                <div class="highlight-card">
+                    <video src="highlight2.mp4" controls></video>
+                    <h3>Football Touchdown of the Year</h3>
                 </div>
-            </div>
-        </section>
-
-        <section id="programs">
-            <h2>Our Programs</h2>
-            <div class="program-grid">
-                <div class="program-card">
-                    <h3>Elementary Education</h3>
-                    <p>Building a strong foundation for young learners.</p>
-                </div>
-                <div class="program-card">
-                    <h3>Middle School</h3>
-                    <p>Guiding students through crucial developmental years.</p>
-                </div>
-                <div class="program-card">
-                    <h3>High School</h3>
-                    <p>Preparing students for college and beyond.</p>
-                </div>
-                <div class="program-card">
-                    <h3>Special Education</h3>
-                    <p>Tailored support for diverse learning needs.</p>
+                <div class="highlight-card">
+                    <video src="highlight3.mp4" controls></video>
+                    <h3>Soccer Team's Winning Streak</h3>
                 </div>
             </div>
         </section>
 
-        <section id="faculty">
-            <h2>Our Faculty</h2>
-            <div class="faculty-slider">
-                <div class="faculty-card">
-                    <img src="https://source.unsplash.com/300x300/?teacher,woman" alt="Teacher 1">
-                    <h3>Jane Doe</h3>
-                    <p>English Literature</p>
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-date">MAY 15</div>
+                    <div class="event-details">
+                        <h3>Spring Concert</h3>
+                        <p>Join us for a night of music and performances!</p>
+                    </div>
                 </div>
-                <div class="faculty-card">
-                    <img src="https://source.unsplash.com/300x300/?teacher,man" alt="Teacher 2">
-                    <h3>John Smith</h3>
-                    <p>Mathematics</p>
+                <div class="event-item">
+                    <div class="event-date">JUN 1</div>
+                    <div class="event-details">
+                        <h3>Graduation Ceremony</h3>
+                        <p>Celebrate our seniors as they move on to new adventures!</p>
+                    </div>
                 </div>
-                <div class="faculty-card">
-                    <img src="https://source.unsplash.com/300x300/?professor,woman" alt="Teacher 3">
-                    <h3>Emily Brown</h3>
-                    <p>Science</p>
+                <div class="event-item">
+                    <div class="event-date">JUN 10</div>
+                    <div class="event-details">
+                        <h3>Summer Kickoff Party</h3>
+                        <p>Let's welcome summer with games, food, and fun!</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>PPHS Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://source.unsplash.com/400x400/?highschool,students" alt="PPHS Gallery 1">
+                <img src="https://source.unsplash.com/400x400/?classroom,learning" alt="PPHS Gallery 2">
+                <img src="https://source.unsplash.com/400x400/?sports,team" alt="PPHS Gallery 3">
+                <img src="https://source.unsplash.com/400x400/?school,event" alt="PPHS Gallery 4">
+                <img src="https://source.unsplash.com/400x400/?graduation,celebration" alt="PPHS Gallery 5">
+                <img src="https://source.unsplash.com/400x400/?student,club" alt="PPHS Gallery 6">
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact Us</h2>
+            <h2>Get in Touch</h2>
             <form class="contact-form">
                 <input type="text" placeholder="Name" required>
                 <input type="email" placeholder="Email" required>
                 <textarea placeholder="Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+            <p class="disclaimer">For any questions, contact "best_of_pphs" on Instagram</p>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Address</h3>
-                <p>123 School Street, City, State 12345</p>
+                <h3>PPHS Student Hub</h3>
+                <p>Your go-to source for all things PPHS</p>
             </div>
             <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Phone: (123) 456-7890</p>
-                <p>Email: info@school.edu</p>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
+                    <a href="#" class="social-icon">IG</a>
                     <a href="#" class="social-icon">FB</a>
                     <a href="#" class="social-icon">TW</a>
-                    <a href="#" class="social-icon">IG</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 School Name. All rights reserved.</p>
+            <p>&copy; 2023 PPHS Student Hub. All rights reserved.</p>
         </div>
     </footer>
 
