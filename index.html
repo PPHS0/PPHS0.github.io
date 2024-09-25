@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PPHS Student Hub - Your go-to source for all Pleasant Plains High School student services, events, and highlights.">
     <title>PPHS Student Hub</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -23,49 +28,58 @@
                 <li><a href="#bookmarklets">Bookmarklets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="burger">
+            <div class="burger" aria-label="Toggle menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
         </nav>
     </header>
+
     <main>
         <section id="home">
             <div class="hero-content">
-                <h1>PPHS Student Hub</h1>
+                <h1>Welcome to PPHS Student Hub</h1>
+                <p>Your one-stop destination for all things Pleasant Plains High School</p>
                 <a href="#highlights" class="cta-button">Check Out Highlights</a>
             </div>
             <div class="image-gallery">
-                <img src="1.jpg" alt="PPHS Image 1">
-                <img src="website phoyo.jpg" alt="PPHS Image 2">
-                <img src="bs.jpg" alt="PPHS Image 3">
-                <img src="bs.jpg_large" alt="PPHS Image 4">
-                <img src="website bs.jpg" alt="PPHS Image 5">
-                <img src="11.jpg" alt="PPHS Image 6">
+                <img src="1.jpg" alt="PPHS Image 1" loading="lazy">
+                <img src="website phoyo.jpg" alt="PPHS Image 2" loading="lazy">
+                <img src="bs.jpg" alt="PPHS Image 3" loading="lazy">
+                <img src="bs.jpg_large" alt="PPHS Image 4" loading="lazy">
+                <img src="website bs.jpg" alt="PPHS Image 5" loading="lazy">
+                <img src="11.jpg" alt="PPHS Image 6" loading="lazy">
             </div>
         </section>
+
         <section id="highlights">
             <h2>Sports Highlights</h2>
             <div class="highlight-grid">
                 <div class="highlight-card">
-                    <video src="GraycynHadley.mp4" controls></video>
+                    <video src="GraycynHadley.mp4" controls preload="metadata">
+                        Your browser does not support the video tag.
+                    </video>
                     <h3>Best Volleyball Clip</h3>
-                    <p>Graycyn Hadley's major hit against (unknown) </p>
+                    <p>Graycyn Hadley's major hit against (unknown)</p>
                 </div>
                 <div class="highlight-card">
-                    <video src="highlight1.mp4" controls></video>
+                    <video src="highlight1.mp4" controls preload="metadata">
+                        Your browser does not support the video tag.
+                    </video>
                     <h3>Football Touchdown of the Year</h3>
-                    <p>Game winning touchdown against auburn's hoco game</p>
+                    <p>Game-winning touchdown against Auburn's homecoming game</p>
+                </div>
             </div>
         </section>
+
         <section id="events">
             <h2>Upcoming Events</h2>
             <div class="event-list">
                 <div class="event-item">
                     <div class="event-date">September 27th</div>
                     <div class="event-details">
-                        <h3>Hoco Friday</h3>
+                        <h3>Homecoming Friday</h3>
                         <p>Early dismissal at 1:40, Meet at Village Hall @ 3:30, Floats roll out @ 4:40, FB game against Porta @ 7</p>
                     </div>
                 </div>
@@ -73,61 +87,64 @@
                     <div class="event-date">Monday, September 30</div>
                     <div class="event-details">
                         <h3>A Day</h3>
-                        <p>6-8PM Away game JV football agaisnt porta</p>
+                        <p>6-8PM Away game JV football against Porta</p>
                     </div>
                 </div>
                 <div class="event-item">
                     <div class="event-date">Tuesday, October 1</div>
                     <div class="event-details">
-                        <h3>Summer B day</h3>
-                        <p>frosh-varsity Volleyball game @ williamsvile @ 5-8, frosh at 5-6 JV at 6-7 and varsity at 7-8PM.</p>
+                        <h3>B day</h3>
+                        <p>Frosh-varsity Volleyball game @ Williamsville @ 5-8, Frosh at 5-6, JV at 6-7, and Varsity at 7-8PM.</p>
                     </div>
                 </div>
                 <div class="event-item">
                     <div class="event-date">Wednesday, October 2</div>
                     <div class="event-details">
                         <h3>A day</h3>
-                        <p>Varsity boys soccor @ Lutheran HS @ 4:30-6PM and JV @ 6-7:30PM</p>
+                        <p>Varsity boys soccer @ Lutheran HS @ 4:30-6PM and JV @ 6-7:30PM</p>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
+
         <section id="gallery">
             <h2>PPHS Gallery</h2>
             <div class="gallery-container">
                 <div class="gallery-slider">
-                    <img src="CheerAndPoms.jpg" alt="PPHS Gallery 1">
-                    <img src="Golf.jpg" alt="PPHS Gallery 2">
-                    <img src="Volleyball.jpg" alt="PPHS Gallery 3">
-                    <img src="Soccer.jpg" alt="PPHS Gallery 4">
-                    <img src="FB.jpg" alt="PPHS Gallery 5">
+                    <img src="CheerAndPoms.jpg" alt="PPHS Gallery 1" loading="lazy">
+                    <img src="Golf.jpg" alt="PPHS Gallery 2" loading="lazy">
+                    <img src="Volleyball.jpg" alt="PPHS Gallery 3" loading="lazy">
+                    <img src="Soccer.jpg" alt="PPHS Gallery 4" loading="lazy">
+                    <img src="FB.jpg" alt="PPHS Gallery 5" loading="lazy">
                 </div>
-                <button class="gallery-prev">&#10094;</button>
-                <button class="gallery-next">&#10095;</button>
+                <button class="gallery-prev" aria-label="Previous image">&#10094;</button>
+                <button class="gallery-next" aria-label="Next image">&#10095;</button>
             </div>
         </section>
-      <section id="bookmarklets">
-    <h2>Useful Bookmarklets</h2>
-    <div class="bookmarklet-container">
-        <div class="bookmarklet">
-            <h3>School GUI</h3>
-            <p>To use the autoclicker press the button left to "1". To use the chatbot, select text then click answer/define, or talk to it using JavaScript.</p>
-            <a href="https://raw.githubusercontent.com/PPHS0/PPHS0.github.io/refs/heads/main/blookmarklet.js" class="bookmarklet-link" draggable="true" ondragstart="event.dataTransfer.setData('text/plain', this.href)" target="_blank">School GUI</a>
-        </div>
-    </div>
-</section>
+
+        <section id="bookmarklets">
+            <h2>Useful Bookmarklets</h2>
+            <div class="bookmarklet-container">
+                <div class="bookmarklet">
+                    <h3>School GUI</h3>
+                    <p>To use the autoclicker press the button left to "1". To use the chatbot, select text then click answer/define, or talk to it using JavaScript.</p>
+                    <a href="javascript:(function(){var script=document.createElement('script');script.src='https://raw.githubusercontent.com/PPHS0/PPHS0.github.io/refs/heads/main/blookmarklet.js';document.body.appendChild(script);})();" class="bookmarklet-link" draggable="true">School GUI</a>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h2>Get in Touch</h2>
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <textarea name="message" placeholder="Message" required></textarea>
-                <button type="submit">Send Message (wont work yet) </button>
+                <button type="submit">Send Message</button>
             </form>
             <p class="disclaimer">For any questions, contact "best_of_pphs" on Instagram</p>
         </section>
     </main>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -145,17 +162,17 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Follow The Insta</h3>
+                <h3>Follow Us on Instagram</h3>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/best_of_PPHS/" class="social-icon">IG</a>
+                    <a href="https://www.instagram.com/best_of_PPHS/" class="social-icon" target="_blank" rel="noopener noreferrer">IG</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 PPHS Student Hub. All rights reserved.
-No staff affiliation with the school district "Pleasant Plains Highschool" in Pleasant Plains, Illinois. This website abides by the student handbook.</p>
+            <p>&copy; 2024 PPHS Student Hub. All rights reserved. No staff affiliation with the school district "Pleasant Plains High School" in Pleasant Plains, Illinois. This website abides by the student handbook.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
