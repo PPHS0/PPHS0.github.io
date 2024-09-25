@@ -144,17 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in').forEach(element => {
         observer.observe(element);
     });
-
-  const bookmarklets = document.querySelectorAll('.bookmarklet-link');
-bookmarklets.forEach(bookmarklet => {
-    bookmarklet.addEventListener('click', (e) => {
-        e.preventDefault();
-        const bookmarkletCode = bookmarklet.getAttribute('href');
-        navigator.clipboard.writeText(bookmarkletCode).then(() => {
-            alert('Bookmarklet copied to clipboard! Drag it to your bookmarks bar to use.');
-            window.open(bookmarkletCode, '_blank');
-        }).catch(err => {
-            console.error('Failed to copy bookmarklet: ', err);
         });
     });
 });
