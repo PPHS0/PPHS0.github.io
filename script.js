@@ -144,6 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in').forEach(element => {
         observer.observe(element);
     });
-        });
-    });
+
 });
