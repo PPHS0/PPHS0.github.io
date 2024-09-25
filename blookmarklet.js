@@ -109,7 +109,7 @@ const createUI = () => {
         </div>
         <div class="credit-card" style="background: linear-gradient(135deg, ${config.uiColor}, ${config.accentColor}); padding: 20px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
           <h3 style="color: #fff; margin-bottom: 10px; font-size: 20px;">Retracted info</h3>
-          <p style="color: #f0f0f0; font-style: italic;">Assistant Developer, & API Manager</p>
+          <p style="color: #f0f0f0; font-style: italic;">Assistant Developer, Tester & API Manager</p>
         </div>
       </div>
     </div>
@@ -565,7 +565,7 @@ const makeDraggable = (element) => {
   const messagesDiv = document.getElementById("chatbotMessages");
   const answerDefineBtn = document.getElementById("answerDefineBtn");
   addMessage(
-    "to use Answer/Define, Highlight text then click the button.",
+    "hi, You can ask me anything or use 'Answer/Define' for quick explanations.",
   );
   };
 
@@ -594,23 +594,23 @@ const makeDraggable = (element) => {
             safetySettings: [
               {
                 category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
               {
                 category: "HARM_CATEGORY_HATE_SPEECH",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
               {
                 category: "HARM_CATEGORY_HARASSMENT",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
               {
                 category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
             ],
             generationConfig: {
-              temperature: 0.7,
+              temperature: 0.2,
               topP: 0.8,
               topK: 40,
               maxOutputTokens: 4096,
@@ -671,19 +671,19 @@ const makeDraggable = (element) => {
             safetySettings: [
               {
                 category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
               {
                 category: "HARM_CATEGORY_HATE_SPEECH",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
               {
                 category: "HARM_CATEGORY_HARASSMENT",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
               {
                 category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                threshold: "BLOCK_ALL",
+                threshold: "BLOCK_NONE",
               },
             ],
             generationConfig: {
